@@ -43,15 +43,18 @@
     
 ## Part 2
 1. Define the problem
-    We have four files that each have a record corresponding to a cluster; R1 corresponds to the biological read (sense); I1 corresponds to the index for biological read 1(sense); R2 corresponds to the biological read (anti-sense); I2 corresponds to the index for biological read 2 (anti-sense).
+    We have four files that each have a record corresponding to a cluster; R1 corresponds to the biological read (sense); I1 corresponds to the index for biological read 1(sense); R2 corresponds to the biological read (anti-sense); I2 corresponds to the index for biological read 2 (anti-sense). We need to clasify the biological reads (R1 & R2) by matching indexes; hopped indexes and unknown or low quality indexes. Since if we want to sequence only the data with matching barcodes which would correspond to only one cluster and that can be aligned to our corresponding genome sequence.
     
-    
-    That is, given four input FASTQ files (2 with biological reads, 2 with index reads) and the 24 known indexes above, demultiplex reads by index-pair, outputting one R1 FASTQ file and one R2 FASTQ file per matching index-pair, another two FASTQ files for non-matching index-pairs (index-hopping), and two additional FASTQ files when one or both index reads are unknown or low quality (do not match the 24 known indexes [this includes indexes with 'N's in them] or do not meet a quality score cutoff). Add the sequence of the index-pair to the header of BOTH reads in all of your FASTQ files for all categories (e.g. add “AAAAAAAA-CCCCCCCC” to the end of headers of every read pair that had an index1 of AAAAAAAA and an index2 of CCCCCCCC; this pair of reads would be in the unknown category as one or both of these indexes do not match the 24 known indexes).
 
-Additionally, your algorithm should report the number of read-pairs with properly matched indexes (per index-pair), the number of read pairs with index-hopping observed, and the number of read-pairs with unknown index(es). You should strive to report values for each possible pair of indexes (both swapped and dual matched). You should not write any code for this portion of the assignment. 
 2. Describe output
+  We will obtain two files per matched index (one per each read file), since we have 24 known indexes we would obtain 48 files (24 R1 & 24 R2). Two files for hopped indexes (1 R1 & 1 R2) and two files for unknown (1 R1 & 1 R2). 
+  In our test data we will have 6 output files since we will only test 1 matched index (1 R1; 1 R2), one test for hopped index (1 R1; 1 R2), and finally one test for unkown (1 R1; 1 R2)
 3. Upload your [4 input FASTQ files](../TEST-input_FASTQ) and your [>=6 expected output FASTQ files](../TEST-output_FASTQ).
+  Inputed on folder "Test_Files"
+
 4. Pseudocode
+  Was uploaded as a separate file in the repository (higher level)
+  
 5. High level functions. For each function, be sure to include:
     1. Description/doc string
     2. Function headers (name and parameters)
