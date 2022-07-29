@@ -30,6 +30,8 @@
     ![Distribution_R4](https://user-images.githubusercontent.com/89626045/181822092-b560a0f2-5124-4db6-9288-550a7ef1b712.jpeg)
 
    ii. What is a good quality score cutoff for index reads and biological read pairs to utilize for sample identification and downstream analysis, respectively?
+   For biological reads I would asign a quality score cutoff of 20 since it's not that important for us since during alignment if a read doesn't match the base sequence it will be discarded.
+   For Index reads I'm proposing using the quality score cutoff of 20, this is because the sequences for indexes are short (8) and after doing some revising of indexes sequences they differ by at least 3 nucleotides so the possibility of incorrectly asigning a barcode would be *very low*
    
    iii.How many indexes have undetermined (N) base calls? (Utilize your command line tool knowledge. Submit the command(s) you used. 
    ```
