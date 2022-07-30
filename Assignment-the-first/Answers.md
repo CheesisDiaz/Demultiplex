@@ -60,3 +60,52 @@
     2. Function headers (name and parameters)
     3. Test examples for individual functions
     4. Return statement
+    ```
+    PHRED SCORING
+    1. This function will obtain the phred scoring from the record of each file
+    2. name: convert phred
+       parameters: letter (str)
+    3. Input: E
+       Output: 69    
+    4. Returns the phred score (69)
+    ```
+    
+    ```
+    REVERSE COMPLEMENT
+    1. This function will obtain the reverse complement of the sequence
+    2. name: rev_complement
+       parameters: index sequence (str)
+    3. Input: TTTTTTTT
+       Output: AAAAAAAA
+    4. Returns the reverse complement (AAAAAAAA)
+    ```
+    
+    ```
+    RENAMING HEADERS
+    1. This function will rename the header of a record to include the index1 and index 2
+    2. name: new_header
+       parameters: header (str), index1(str), index2(str) <This will be a result of rev_complement>
+    3. Input: @Seq1:1:N:01; AAAAAAA; AAAAAAA
+       Output: @Seq1:1:N:01:AAAAAAA:AAAAAAA
+    4. Returns a new header
+    ```
+    
+    ```
+    READFILE
+    1. This function will read a file and give a variable for each line of a record
+    2. name: read_record
+       parameters: file_name (str)
+    3. Input: Read1.fq
+       Output: Header = @seq; Seq = AAAATT; Sep = +; Qua = EEEEEE
+    4. 
+    ```
+    
+    ```
+    UNKNOWN INDEX
+    1. This function will revise if an index contains an N
+    2. name n_index
+       parameters: index (str)
+    3. Input: Seq line for Index files
+       Output: False
+    4. True or False
+    ```
