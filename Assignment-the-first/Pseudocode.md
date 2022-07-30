@@ -16,7 +16,7 @@
      while while redirecting change the header of Read1 and Read2 record to include Index1:Index2*
         
 - If Index1 and Index2* is in the dictionary (*known indexes*):
-    
+    Iterate over each letter of the Index records and obtain Average Quality Score per record
    - If Quality Score is less than Quality Score Cutoff
    
      Redirect the Read1 record to "Unknown_R1.fq" and Read2 record to "Unknown_R2.fq". 
