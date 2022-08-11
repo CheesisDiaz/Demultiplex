@@ -22,7 +22,6 @@ o=args.output
 #For biology reads files
 pos_array = np.zeros(bp, dtype=float)
 with gzip.open(f, "rt") as fi:
-    count = 0
     while True:
         Head = fi.readline().strip()
         if Head == "":
@@ -33,7 +32,6 @@ with gzip.open(f, "rt") as fi:
         for indx,letter in enumerate(Seq):
             p_score = bioinfo.convert_phred(letter) #For letter in each line a p_score will be calculated
             pos_array[indx] += p_score
-        count += 1
 
 means = []
 for score in pos_array:
